@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <table name="Taller">
+        <column name="código" type="int" primaryKey="true"/>
+        <column name="descripción" type="text"/>
+        <!-- Foreign keys -->
+        <foreignKey column="operario_responsable_DNI" references="OperarioResponsable(DNI)" nullable="true"/>
+    </table>
+    <table name="Célula">
+        <column name="código" type="int" primaryKey="true"/>
+        <column name="nombre" type="text"/>
+        <!-- Foreign keys -->
+        <foreignKey column="taller_código" references="Taller(código)"/>
+    </table>
+    <table name="Máquina">
+        <column name="código" type="int" primaryKey="true"/>
+        <column name="descripción" type="text"/>
+        <column name="modelo" type="text"/>
+        <!-- Foreign keys -->
+        <foreignKey column="célula_código" references="Célula(código)"/>
+    </table>
+    <table name="Operario">
+        <column name="DNI" type="text" primaryKey="true"/>
+        <column name="nombre" type="text"/>
+        <column name="domicilio" type="text"/>
+        <column name="teléfonos" type="text"/>
+        <!-- Foreign keys -->
+        <foreignKey column="taller_código" references="Taller(código)"/>
+        <foreignKey column="célula_código" references="Célula(código)"/>
+    </table>
+    <table name="OperarioResponsable">
+        <column name="DNI" type="text" primaryKey="true"/>
+        <column name="nombre" type="text"/>
+        <column name="domicilio" type="text"/>
+        <column name="teléfonos" type="text"/>
+        <!-- Foreign keys -->
+        <foreignKey column="taller_código" references="Taller(código)" nullable="true"/>
+    </table>
+</database>
