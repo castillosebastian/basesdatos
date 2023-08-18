@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábrica de Base de Datos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tablas de la Base de Datos</h1>
+    
+    <!-- Tabla Taller -->
+    <h2>Taller</h2>
+    <table>
+        <tr>
+            <th>código (PK)</th>
+            <th>descripción</th>
+            <th>operario_responsable_DNI (FK - OperarioResponsable)</th>
+        </tr>
+    </table>
+    
+    <!-- Tabla Célula -->
+    <h2>Célula</h2>
+    <table>
+        <tr>
+            <th>código (PK)</th>
+            <th>nombre</th>
+            <th>taller_código (FK - Taller)</th>
+        </tr>
+    </table>
+    
+    <!-- Tabla Máquina -->
+    <h2>Máquina</h2>
+    <table>
+        <tr>
+            <th>código (PK)</th>
+            <th>descripción</th>
+            <th>modelo</th>
+            <th>célula_código (FK - Célula)</th>
+        </tr>
+    </table>
+    
+    <!-- Tabla Operario -->
+    <h2>Operario</h2>
+    <table>
+        <tr>
+            <th>DNI (PK)</th>
+            <th>nombre</th>
+            <th>domicilio</th>
+            <th>teléfonos</th>
+            <th>taller_código (FK - Taller)</th>
+            <th>célula_código (FK - Célula)</th>
+        </tr>
+    </table>
+    
+    <!-- Tabla Operario Responsable -->
+    <h2>Operario Responsable</h2>
+    <table>
+        <tr>
+            <th>DNI (PK)</th>
+            <th>nombre</th>
+            <th>domicilio</th>
+            <th>teléfonos</th>
+            <th>taller_código (FK - Taller)</th>
+        </tr>
+    </table>
+</body>
+</html>
