@@ -1,0 +1,25 @@
+
+digraph hospital {
+    label="Hospital";
+    labelloc="t";
+    fontsize=24;
+
+    node [shape=record];
+
+    Hospital [label="{Hospital|código (PK) : int\l nombre : text\l dirección : text\l teléfono : text\l cantidad de camas : int\l}"];
+    Sala [label="{Sala|código (PK) : int\l nombre : text\l cantidad de camas : int\l hospital_código (FK) : int\l}"];
+    Médico [label="{Médico|DNI (PK) : int\l nombre : text\l especialidad : text\l hospital_código (FK) : int\l}"];
+    Laboratorio [label="{Laboratorio|código (PK) : int\l nombre : text\l dirección : text\l teléfono : text\l descripción de servicios : text\l fecha de servicio : date\l hospital_código (FK) : int\l}"];
+    Paciente [label="{Paciente|DNI (PK) : int\l número de registro : int\l número de cama : int\l nombre : text\l dirección : text\l fecha de nacimiento : date\l sexo : text\l sala_código (FK) : int\l médico_DNI (FK) : int\l}"];
+    Diagnóstico [label="{Diagnóstico|código (PK) : int\l tipo : text\l complicaciones : text\l fecha : date\l paciente_DNI (FK) : int\l}"];
+
+    Hospital -> Sala [label="tiene (1,n)"];
+    Sala -> Hospital [label="pertenece a (1,1)"];
+    Médico -> Hospital [label="trabaja en (1,1)"];
+    Hospital -> Laboratorio [label="trabaja con (1,n)"];
+    Laboratorio -> Hospital [label="presta servicios a (1,n)"];
+    Paciente -> Sala [label="está internado en (0,1)"];
+    Paciente -> Médico [label="es atendido por (1,n)"];
+    Médico -> Paciente [label="atiende a (1,n)"];
+    Paciente -> Diagnóstico [label="tiene (1,n)"];
+}

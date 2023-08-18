@@ -1,0 +1,21 @@
+
+digraph fabrica {
+    label="Fábrica";
+    labelloc="t"; // Position the label at the top
+    fontsize=24;  // Set font size for the title
+    
+    node [shape=record];
+    
+    Taller [label="{Taller|código (PK) : int\l descripción : text\l operario_responsable_DNI (FK) : int\l}"];
+    Célula [label="{Célula|código (PK) : int\l nombre : text\l taller_código (FK) : int\l}"];
+    Máquina [label="{Máquina|código (PK) : int\l descripción : text\l modelo : text\l célula_código (FK) : int\l}"];
+    Operario [label="{Operario|DNI (PK) : text\l nombre : text\l domicilio : text\l teléfonos : text\l taller_código (FK) : int\l célula_código (FK) : int\l}"];
+    OperarioResponsable [label="{Operario Responsable|DNI (PK) : text\l nombre : text\l domicilio : text\l teléfonos : text\l taller_código (FK) : int\l}"];
+    
+    Taller -> Célula [label="tiene (1,n)"];
+    Célula -> Taller [label="pertenece a (1,1)"];
+    Célula -> Máquina [label="contiene (1,n)"];
+    Taller -> Operario [label="tiene asignado (1,n)"];
+    Célula -> Operario [label="tiene asignado (1,n)"];
+    Taller -> OperarioResponsable [label="tiene asignado (0,1)"];
+}

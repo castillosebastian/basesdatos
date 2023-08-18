@@ -1,0 +1,26 @@
+
+digraph gallery {
+    label="Galería";
+    labelloc="t";
+    fontsize=24;
+    
+    node [shape=record];
+    
+    Artista [label="{Artista|DNI (PK) : int\l nombre : text\l biografía : text\l}"];
+    "Obra de Arte" [label="{Obra de Arte|código (PK) : int\l nombre : text\l estilo : text\l color : text\l medida : int\l stock : int\l fecha : date\l artista_DNI (FK) : int\l cliente_nombre (FK) : text\l vendedor_DNI (FK) : int\l}"];
+    Cliente [label="{Cliente|nombre (PK) : text\l dirección : text\l teléfono : text\l}"];
+    Venta [label="{Venta|fecha (PK) : date\l cantidad : int\l vendedor_DNI (FK) : int\l cliente_nombre (FK) : text\l}"];
+    Vendedor [label="{Vendedor|DNI (PK) : int\l nombre : text\l comisión : float\l}"];
+    
+    Artista -> "Obra de Arte" [label="crea (1,n)"];
+    "Obra de Arte" -> Artista [label="es creada por (1,1)"];
+    Cliente -> "Obra de Arte" [label="compra (0,n)"];
+    "Obra de Arte" -> Cliente [label="es comprada por (0,1)"];
+    Vendedor -> "Obra de Arte" [label="vende (1,n)"];
+    "Obra de Arte" -> Vendedor [label="es vendida por (1,1)"];
+    Cliente -> Vendedor [label="tiene intereses atendidos por (1,1)"];
+    Vendedor -> Venta [label="realiza (1,n)"];
+    Cliente -> Venta [label="realiza (1,n)"];
+}
+
+

@@ -1,0 +1,22 @@
+
+digraph zapateria {
+    label="Zapatería";
+    labelloc="t";
+    fontsize=24;
+    
+    node [shape=record];
+    
+    Zapato [label="{Zapato|código (PK) : int\l estilo : text\l color : text\l medida : int\l stock : int\l proveedor_código (FK) : int\l}"];
+    Proveedor [label="{Proveedor|código (PK) : int\l nombre : text\l contacto : text\l}"];
+    "Tipo de Venta" [label="{Tipo de Venta|código (PK) : int\l descripción : text\l}"];
+    Cliente [label="{Cliente|código (PK) : int\l nombre : text\l dirección : text\l teléfono : text\l intereses de compra : text\l}"];
+    Venta [label="{Venta|código (PK) : int\l fecha : date\l cantidad : int\l tipo : text\l zapato_código (FK) : int\l tipo_de_venta_código (FK) : int\l cliente_código (FK) : int\l vendedor_código (FK) : int\l}"];
+    Vendedor [label="{Vendedor|código (PK) : int\l nombre : text\l porcentaje de comisión : float\l}"];
+    
+    Zapato -> Proveedor [label="es suministrado por (1,1)"];
+    Proveedor -> Zapato [label="suministra (1,n)"];
+    Venta -> "Tipo de Venta" [label="está asociada a (1,1)"];
+    Cliente -> Venta [label="realiza (1,n)"];
+    Venta -> Zapato [label="está asociada a (1,1)"];
+    Venta -> Vendedor [label="es acreditada a (1,1)"];
+}
