@@ -1,0 +1,40 @@
+{
+    "MAQUINA": {
+        "columns": {
+            "id_maquina": {
+                "type": "integer",
+                "PK": true
+            },
+            "nombre": {
+                "type": "VARCHAR(10)"
+            },
+            "tipo": {
+                "type": "VARCHAR(2)"
+            },
+            "id_celula": {
+                "type": "integer",
+                "FK": true
+            }
+        },
+        "data": [
+            {
+                "id_maquina": 1,
+                "nombre": "maquinaM1",
+                "tipo": "T1",
+                "id_celula": 5
+            },
+            {
+                "id_maquina": 2,
+                "nombre": "maquinaM2",
+                "tipo": "T1",
+                "id_celula": 3
+            },
+            {
+                "id_maquina": 3,
+                "nombre": "maquinaM3",
+                "tipo": "T2",
+                "id_celula": 4
+            }
+        ]
+    }
+}

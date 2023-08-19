@@ -1,0 +1,33 @@
+{
+    "TEL_TALLER": {
+        "columns": {
+            "id_taller": {
+                "type": "integer",
+                "PK": true,
+                "FK": true
+            },
+            "nro_tel": {
+                "type": "integer",
+                "PK": true
+            }
+        },
+        "data": [
+            {
+                "id_taller": 1,
+                "nro_tel": 156222333
+            },
+            {
+                "id_taller": 1,
+                "nro_tel": 4258693
+            },
+            {
+                "id_taller": 2,
+                "nro_tel": 158889995
+            },
+            {
+                "id_taller": 3,
+                "nro_tel": 154845484
+            }
+        ]
+    }
+}

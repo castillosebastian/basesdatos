@@ -1,0 +1,39 @@
+{
+    "CELULA": {
+        "columns": {
+            "id_celula": {
+                "type": "integer",
+                "PK": true
+            },
+            "descripcion": {
+                "type": "VARCHAR(10)"
+            },
+            "id_taller": {
+                "type": "integer",
+                "FK": true
+            }
+        },
+        "data": [
+            {
+                "id_celula": 3,
+                "descripcion": "celulaC1",
+                "id_taller": 1
+            },
+            {
+                "id_celula": 4,
+                "descripcion": "celulaC2",
+                "id_taller": 3
+            },
+            {
+                "id_celula": 5,
+                "descripcion": "celulaC3",
+                "id_taller": 2
+            },
+            {
+                "id_celula": 6,
+                "descripcion": "celulaC4",
+                "id_taller": 3
+            }
+        ]
+    }
+}

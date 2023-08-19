@@ -1,0 +1,48 @@
+{
+    "TALLER": {
+        "columns": {
+            "id_taller": {
+                "type": "integer",
+                "PK": true
+            },
+            "nombre": {
+                "type": "VARCHAR(20)"
+            },
+            "calle": {
+                "type": "VARCHAR(15)"
+            },
+            "calle_nro": {
+                "type": "integer"
+            },
+            "dni_resp": {
+                "type": "integer",
+                "FK": true,
+                "UK": true,
+                "Not None": true
+            }
+        },
+        "data": [
+            {
+                "id_taller": 1,
+                "nombre": "tallerT1",
+                "calle": "Av. Sol",
+                "calle_nro": 2358,
+                "dni_resp": 10000
+            },
+            {
+                "id_taller": 2,
+                "nombre": "tallerT2",
+                "calle": "Las Magnolias",
+                "calle_nro": 2580,
+                "dni_resp": 20000
+            },
+            {
+                "id_taller": 3,
+                "nombre": "tallerT3",
+                "calle": "Las Sombras",
+                "calle_nro": 4289,
+                "dni_resp": 30000
+            }
+        ]
+    }
+}

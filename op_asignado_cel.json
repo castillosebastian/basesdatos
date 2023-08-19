@@ -1,0 +1,49 @@
+{
+    "OP_ASIGNADO_CEL": {
+        "columns": {
+            "dni": {
+                "type": "integer",
+                "PK": true,
+                "FK": true
+            },
+            "id_celula": {
+                "type": "integer",
+                "PK": true,
+                "FK": true
+            },
+            "fecha_desde": {
+                "type": "date",
+                "PK": true
+            },
+            "fecha_hasta": {
+                "type": "date"
+            }
+        },
+        "data": [
+            {
+                "dni": 35000,
+                "id_celula": 4,
+                "fecha_desde": "01/01/2022",
+                "fecha_hasta": "31/12/2022"
+            },
+            {
+                "dni": 35000,
+                "id_celula": 6,
+                "fecha_desde": "01/01/2023",
+                "fecha_hasta": null
+            },
+            {
+                "dni": 36000,
+                "id_celula": 3,
+                "fecha_desde": "10/08/2023",
+                "fecha_hasta": null
+            },
+            {
+                "dni": 40000,
+                "id_celula": 5,
+                "fecha_desde": "15/12/2022",
+                "fecha_hasta": null
+            }
+        ]
+    }
+}

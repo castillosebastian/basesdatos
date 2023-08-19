@@ -1,0 +1,78 @@
+{
+    "OPERARIO": {
+        "columns": {
+            "dni": {
+                "type": "integer",
+                "PK": true
+            },
+            "nombre": {
+                "type": "VARCHAR(20)"
+            },
+            "apellido": {
+                "type": "VARCHAR(20)"
+            },
+            "responsable_taller": {
+                "type": "integer",
+                "Not None": true,
+                "Check": "0,1"
+            },
+            "salario": {
+                "type": "integer"
+            },
+            "id_taller": {
+                "type": "integer",
+                "FK": true
+            }
+        },
+        "data": [
+            {
+                "dni": 35000,
+                "nombre": "Juan Cortez",
+                "apellido": "Cortez",
+                "responsable_taller": 0,
+                "salario": 350000,
+                "id_taller": 3
+            },
+            {
+                "dni": 36000,
+                "nombre": "Marcelo Lopez",
+                "apellido": "Lopez",
+                "responsable_taller": 0,
+                "salario": 278500,
+                "id_taller": 1
+            },
+            {
+                "dni": 40000,
+                "nombre": "Alex Valdez",
+                "apellido": "Valdez",
+                "responsable_taller": 0,
+                "salario": 340000,
+                "id_taller": 2
+            },
+            {
+                "dni": 10000,
+                "nombre": "Pedro Rios",
+                "apellido": "Rios",
+                "responsable_taller": 1,
+                "salario": 458000,
+                "id_taller": 1
+            },
+            {
+                "dni": 20000,
+                "nombre": "Marcos Medina",
+                "apellido": "Medina",
+                "responsable_taller": 1,
+                "salario": 500000,
+                "id_taller": 2
+            },
+            {
+                "dni": 30000,
+                "nombre": "Francisco Ramirez",
+                "apellido": "Ramirez",
+                "responsable_taller": 1,
+                "salario": 512500,
+                "id_taller": 3
+            }
+        ]
+    }
+}
